@@ -91397,7 +91397,7 @@ F(a){var s,r,q,p,o,n,m=null,l=A.R(a)
 A.bj(a,m,t.w).toString
 s=A.dC(24)
 r=l.p2
-q=A.aI("ALFALAVAL Explorer",m,m,m,r.e,m,m)
+q=A.aI("SolutionsAPPS Explorer",m,m,m,r.e,m,m)
 p=A.aI("Enter your Microsoft Graph API token to continue",m,m,m,r.y,B.bx,m)
 o=l.ax
 o=A.aCE(m,m,o.b,m,m,m,m,m,m,o.c,m,m,m,m,m,m,m,m,m)
