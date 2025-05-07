@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="/">
-
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="sharepoint_auth_app">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
-
   <title>sharepoint_auth_app</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- MSAL JS SDK -->
+  <script type="text/javascript" src="https://alcdn.msauth.net/browser/2.35.0/js/msal-browser.min.js"></script>
+
+  <script>
+    const msalConfig = {
+      auth: {
+        clientId: '356fe2ef-4e6c-4719-bfa5-1b2996c41fcd',
+        authority: 'https://login.microsoftonline.com/common',
+        redirectUri: window.location.origin
+      }
+    };
+
+    const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+    function microsoftSignIn() {
+      return msalInstance.loginPopup({
+        scopes: ["User.Read"]
+      }).then(loginResponse => {
+        console.log("Login response:", loginResponse);
+        return loginResponse;
+      }).catch(error => {
+        console.error("Error during Microsoft Sign-In:", error);
+        return null;
+      });
+    }
+
+    // ✅ Attach correctly without causing recursion
+    window.microsoftSignIn = microsoftSignIn;
+  </script>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <script src="flutter_bootstrap.js" defer></script>
 </body>
 </html>
