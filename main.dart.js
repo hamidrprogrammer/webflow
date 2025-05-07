@@ -90621,7 +90621,7 @@ a8(){return new A.UG()}}
 A.UG.prototype={
 u9(){var s=0,r=A.L(t.va),q,p=this,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3
 var $async$u9=A.H(function(a4,a5){if(a4===1)return A.I(a5,r)
-while(true)switch(s){case 0:a1=A.akx("POST",A.eI("https://67.172.190.140:5108/api/OneNote/fetch-xml-all-id",0,null))
+while(true)switch(s){case 0:a1=A.akx("POST",A.eI("https://onenotebackend.work.gd:5108/api/OneNote/fetch-xml-all-id",0,null))
 a2=t.N
 a1.r.W(0,A.ag(["Content-Type","application/json"],a2,a2))
 a1.sG_(0,B.aW.kf(A.ag(["id",J.aV(p.a.c,"pageId"),"title","Solutions-AppsTeam"],a2,t.z)))
@@ -90785,7 +90785,7 @@ A.G5.prototype={
 rp(a){var s=0,r=A.L(t.H),q=1,p,o=this,n,m,l,k,j,i,h,g,f,e
 var $async$rp=A.H(function(b,c){if(b===1){p=c
 s=q}while(true)switch(s){case 0:o.a6(new A.au_(o))
-n=A.eI("https://67.172.190.140:5108/api/OneNote/fetch-xml-all",0,null)
+n=A.eI("https://onenotebackend.work.gd:5108/api/OneNote/fetch-xml-all",0,null)
 q=3
 m=A.akx("POST",n)
 i=t.N
